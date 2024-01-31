@@ -6,6 +6,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddHttpsRedirection(options =>
+{
+    options.HttpsPort = 443; // or the HTTPS port you are using
+});
 
 var app = builder.Build();
 
